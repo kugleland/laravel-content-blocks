@@ -18,7 +18,8 @@ class ContentBlocksServiceProvider extends PackageServiceProvider
             ->name(static::$name)
             ->hasViews()
             ->hasCommand(ExampleCommand::class)
-            ->hasViewComponents('kugleland', ContentBlock::class);
+            ->hasViewComponents('kugleland', ContentBlock::class)
+            ->hasAssets();
     }
 
     public function packageRegistered()
