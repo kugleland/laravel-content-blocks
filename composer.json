@@ -1,46 +1,58 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "kugleland/laravel-content-blocks",
+    "description": "This is my package laravel-content-blocks",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "kugleland",
+        "laravel-content-blocks"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/kugleland/laravel-content-blocks",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Janus Helkjær",
+            "email": "developer@kugleland.dk",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "spatie/laravel-package-tools": "^1.92"
     },
     "require-dev": {
-        :require_dev_testing,
-        :require_dev_codestyle,
+        "pestphp/pest": "^3.0",
+        "laravel/pint": "^1.0",
         "spatie/ray": "^1.28"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Kugleland\\LaravelContentBlocks\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Kugleland\\LaravelContentBlocks\\Tests\\": "tests"
         }
     },
     "scripts": {
-        :scripts_testing,
-        :scripts_codestyle
+        "test": "vendor/bin/pest",
+            "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            :plugins_testing,
+            "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kugleland\\LaravelContentBlocks\\ContentBlocksServiceProvider"
+            ],
+            "aliases": {
+                "ContentBlocks": "Kugleland\\LaravelContentBlocks\\ContentBlocksFacade"
+            }
         }
     },
     "minimum-stability": "dev",
