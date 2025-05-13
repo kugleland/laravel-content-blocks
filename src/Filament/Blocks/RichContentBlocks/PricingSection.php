@@ -1,13 +1,14 @@
 <?php
 
 namespace Kugleland\LaravelContentBlocks\Filament\Blocks\RichContentBlocks;
-use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
+
 use Filament\Forms;
 use Filament\Forms\Form;
+use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 
 class PricingSection extends BaseBlock
 {
-    static function schema(Form $form)
+    public static function schema(Form $form)
     {
         return [
             Forms\Components\TextInput::make('title_monthly'),
@@ -24,7 +25,7 @@ class PricingSection extends BaseBlock
                 Forms\Components\TextInput::make('title'),
                 Forms\Components\RichEditor::make('more_info'),
                 Forms\Components\Textarea::make('tiers')->helperText('Separate each tier with a comma.'),
-            ])->cloneable()
+            ])->cloneable(),
         ];
     }
 }

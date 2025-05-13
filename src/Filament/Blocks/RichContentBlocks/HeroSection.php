@@ -2,51 +2,50 @@
 
 namespace Kugleland\LaravelContentBlocks\Filament\Blocks\RichContentBlocks;
 
-use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
+use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
+
 class HeroSection extends BaseBlock
 {
-    static function schema(Form $form)
+    public static function schema(Form $form)
     {
         $heroStyleOptions = [
-                'default' => 'Default',
-                'simple-centered' => 'Simple centered',
-                'split-with-screenshot-on-light' => 'Split with screenshot on light',
-                'split-with-screenshot-on-dark' => 'Split with screenshot on dark',
-                'split-with-code-example' => 'Split with code example',
+            'default' => 'Default',
+            'simple-centered' => 'Simple centered',
+            'split-with-screenshot-on-light' => 'Split with screenshot on light',
+            'split-with-screenshot-on-dark' => 'Split with screenshot on dark',
+            'split-with-code-example' => 'Split with code example',
 
-                //
-                'simple-centered-with-background-image' => 'Simple centered with background image',
-                //
-                // 'split-with-image-on-light' => 'Split with image on light',
-                // 'split-with-image-on-dark' => 'Split with image on dark',
-                //--
-                'app-screenshot-on-light' => 'App screenshot on light',
-                'app-screenshot-on-dark' => 'App screenshot on dark',
+            //
+            'simple-centered-with-background-image' => 'Simple centered with background image',
+            //
+            // 'split-with-image-on-light' => 'Split with image on light',
+            // 'split-with-image-on-dark' => 'Split with image on dark',
+            // --
+            'app-screenshot-on-light' => 'App screenshot on light',
+            'app-screenshot-on-dark' => 'App screenshot on dark',
 
-                //
-                'phone-mockup' => 'Phone mockup',
-                // 'with-phone-mockup-on-dark' => 'With phone mockup on dark',
-                //
-                'split-with-image-on-light' => 'Split with image on light',
-                'split-with-image-on-dark' => 'Split with image on dark',
+            //
+            'phone-mockup' => 'Phone mockup',
+            // 'with-phone-mockup-on-dark' => 'With phone mockup on dark',
+            //
+            'split-with-image-on-light' => 'Split with image on light',
+            'split-with-image-on-dark' => 'Split with image on dark',
 
-                //
-                'angled-image-on-right' => 'Angled image on right',
-                //'angled-image-on-right-on-dark' => 'Angled image on right on dark',
-                //
-                'image-tiles' => 'Image tiles',
-                //
-                'offset-image' => 'Offset image',
+            //
+            'angled-image-on-right' => 'Angled image on right',
+            // 'angled-image-on-right-on-dark' => 'Angled image on right on dark',
+            //
+            'image-tiles' => 'Image tiles',
+            //
+            'offset-image' => 'Offset image',
 
-                // book cover
-                'book-cover' => 'Book cover',
+            // book cover
+            'book-cover' => 'Book cover',
 
-
-
-            ];
+        ];
 
         asort($heroStyleOptions);
 
@@ -68,9 +67,9 @@ class HeroSection extends BaseBlock
             FileUpload::make('mockup_image')->image(),
 
             FileUpload::make('image_tiles')
-            ->multiple()
-            ->reorderable()
-            ->panelLayout('grid'),
+                ->multiple()
+                ->reorderable()
+                ->panelLayout('grid'),
 
             Forms\Components\TextInput::make('hero_title'),
             Forms\Components\RichEditor::make('hero_content'),
