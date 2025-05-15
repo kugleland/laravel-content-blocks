@@ -13,7 +13,7 @@
         <div>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 p-6 rounded-xl">
-                @foreach (\App\Models\Service::all() as $service)
+                @foreach (\App\Models\Service::query()->bySortOrder()->get() as $service)
                     <div class="flex-1">
                         <flux:card class="h-full flex flex-col space-y-3">
                             <img src="{{ $service->image }}" alt="">
@@ -22,7 +22,7 @@
                             <flux:spacer />
                             <flux:separator />
                             <div class="">
-                                <flux:button icon-trailing="arrow-right"
+                                <flux:button icon-trailing="arrow-right" variant="primary"
                                     href="{{ route('services.show', $service->slug) }}">
                                     Click Here</flux:button>
                             </div>
