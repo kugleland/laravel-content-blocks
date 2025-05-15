@@ -24,12 +24,12 @@
                 </div>
             </div>
             <div class="col-end-1 w-16 lg:row-span-4 lg:w-80">
-                <img class="rounded-xl bg-neutral-50 lg:rounded-3xl" src="{{ Storage::url($data['profile_image']) }}"
-                    alt="">
+                <img class="rounded-xl bg-neutral-100 lg:rounded-3xl pt-6 px-6 shadow-inner"
+                    src="{{ Storage::url($data['profile_image']) }}" alt="">
             </div>
-            <figcaption class="text-base lg:col-start-1 lg:row-start-3">
-                <div class="font-semibold text-gray-900">{{ $data['profile_heading'] }}</div>
-                <div class="mt-1 text-gray-500">{{ $data['profile_subheading'] }}</div>
+            <figcaption class="space-y-1 lg:col-start-1 lg:row-start-3">
+                <flux:heading size="lg">{{ $data['profile_heading'] }}</flux:heading>
+                <flux:text size="lg">{{ $data['profile_subheading'] }}</flux:text>
             </figcaption>
         </figure>
     </div>
