@@ -60,10 +60,11 @@ class Properties
                 ])
                 ->collapsed();
         }
+
         return [
             Section::make('Properties')
                 ->schema($schema)
-                ->columns(2)
+                ->columns(2),
         ];
     }
 }

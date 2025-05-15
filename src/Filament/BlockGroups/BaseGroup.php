@@ -14,21 +14,22 @@ class BaseGroup
 
     public static function getLoaderConfiguration()
     {
-        throw new \Exception('You must implement getLoaderConfiguration() method in your class: ' . static::class);
+        throw new \Exception('You must implement getLoaderConfiguration() method in your class: '.static::class);
     }
 
     public static function loadFromDirectory($loaderConfig, $form, $name)
     {
-        $directory = rtrim($loaderConfig['dir'], '/') . '/';
+        $directory = rtrim($loaderConfig['dir'], '/').'/';
         $blocks = [];
-        foreach (glob($directory . '*.php') as $filename) {
+        foreach (glob($directory.'*.php') as $filename) {
             // Remove the directory from the filename
             $filename = str_replace($directory, '', $filename);
             // Transform filename to class name
             $filename = str_replace('/', '\\', $filename);
-            $class = $loaderConfig['fqn'] . basename($filename, '.php');
+            $class = $loaderConfig['fqn'].basename($filename, '.php');
             $blocks[] = $class::make($form);
         }
+
         return Builder::make($name)
             ->blocks($blocks)
             ->collapsible()

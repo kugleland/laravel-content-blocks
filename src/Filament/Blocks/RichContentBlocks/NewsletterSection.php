@@ -2,28 +2,27 @@
 
 namespace Kugleland\LaravelContentBlocks\Filament\Blocks\RichContentBlocks;
 
-use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Form;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
+use Filament\Forms\Form;
+use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 
 class NewsletterSection extends BaseBlock
 {
-    static function schema(Form $form)
+    public static function schema(Form $form)
     {
         $styleOptions = [
-            'default' => 'Default',   
-                        // 'phone-mockup' => 'Phone mockup',
-                        // 'product-screenshot' => 'Product screenshot',
-                        // 'product-screenshot-on-left' => 'Product screenshot on left',
-                        
+            'default' => 'Default',
+            // 'phone-mockup' => 'Phone mockup',
+            // 'product-screenshot' => 'Product screenshot',
+            // 'product-screenshot-on-left' => 'Product screenshot on left',
 
-                    ];
-                    
-                    asort($styleOptions);
-        
+        ];
+
+        asort($styleOptions);
+
         return [
 
             Tabs::make('Tabs')
@@ -31,22 +30,19 @@ class NewsletterSection extends BaseBlock
                     Tab::make('General')
                         ->schema([
                             // need to display mood, rooms, products, app screenshot, book cover, podcast cover, album cover, artwork, etc
-                        Forms\Components\Select::make('style')->options($styleOptions),
-                     FileUpload::make('image')->image(),
-                        Forms\Components\TextInput::make('pre_title'),
-                        Forms\Components\TextInput::make('title'),
-                        Forms\Components\RichEditor::make('content'),
+                            Forms\Components\Select::make('style')->options($styleOptions),
+                            FileUpload::make('image')->image(),
+                            Forms\Components\TextInput::make('pre_title'),
+                            Forms\Components\TextInput::make('title'),
+                            Forms\Components\RichEditor::make('content'),
                         ]),
                     Tab::make('Sign Up Form')
                         ->schema([
                             // buttons
-                            
-            
+
                         ]),
-                    
+
                 ]),
-
-
 
         ];
     }

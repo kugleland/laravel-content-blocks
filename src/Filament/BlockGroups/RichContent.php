@@ -4,10 +4,10 @@ namespace Kugleland\LaravelContentBlocks\Filament\BlockGroups;
 
 class RichContent extends BaseGroup
 {
-    static function getLoaderConfiguration()
+    public static function getLoaderConfiguration()
     {
         return [
-            'dir' => dirname(__DIR__) . '/Blocks/RichContentBlocks',
+            'dir' => dirname(__DIR__).'/Blocks/RichContentBlocks',
             'fqn' => '\\Kugleland\LaravelContentBlocks\\Filament\\Blocks\\RichContentBlocks\\',
         ];
     }

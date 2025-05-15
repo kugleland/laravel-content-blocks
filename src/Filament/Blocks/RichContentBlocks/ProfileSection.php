@@ -2,15 +2,14 @@
 
 namespace Kugleland\LaravelContentBlocks\Filament\Blocks\RichContentBlocks;
 
-use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Form;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Form;
+use Kugleland\LaravelContentBlocks\Filament\Blocks\BaseBlock;
 
 class ProfileSection extends BaseBlock
 {
-    static function schema(Form $form)
+    public static function schema(Form $form)
     {
         return [
             Forms\Components\Select::make('profile_background')->options([
@@ -19,7 +18,7 @@ class ProfileSection extends BaseBlock
                 'secondary' => 'Secondary',
                 'white' => 'White',
             ]),
-            //SpatieMediaLibraryFileUpload::make('profile_image')->collection('profile'),
+            // SpatieMediaLibraryFileUpload::make('profile_image')->collection('profile'),
             Forms\Components\FileUpload::make('profile_image')->image(),
             Forms\Components\TextInput::make('profile_heading'),
             Forms\Components\TextInput::make('profile_subheading'),
