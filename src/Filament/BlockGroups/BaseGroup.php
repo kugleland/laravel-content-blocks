@@ -33,6 +33,7 @@ class BaseGroup
         return Builder::make($name)
             ->blocks($blocks)
             ->collapsible()
-            ->cloneable();
+            ->cloneable()
+            ->blockPickerColumns(3);
     }
 }

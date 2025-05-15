@@ -7,6 +7,6 @@
 
 @if ($style)
     <div>
-        <x-dynamic-component :component="'blocks.contact.' . $style" :data="$data" />
+        <x-dynamic-component :component="'content-blocks::blocks.contact.' . $style" :data="$data" />
     </div>
 @endif
