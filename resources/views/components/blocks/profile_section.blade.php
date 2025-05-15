@@ -4,10 +4,10 @@
 <section class="isolate overflow-hidden bg-white px-6 lg:px-8">
     <div class="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
         <div
-            class="absolute left-1/2 top-0 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,theme(colors.indigo.100),white)] opacity-20 lg:left-36">
+            class="absolute left-1/2 top-0 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,theme(colors.neutral.100),white)] opacity-20 lg:left-36">
         </div>
         <div
-            class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center">
+            class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-neutral-600/10 ring-1 ring-neutral-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center">
         </div>
         <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
             <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
@@ -23,8 +23,8 @@
                     </x-markdown>
                 </div>
             </div>
-            <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
-                <img class="rounded-xl bg-indigo-50 lg:rounded-3xl" src="{{ Storage::url($data['profile_image']) }}"
+            <div class="col-end-1 w-16 lg:row-span-4 lg:w-80">
+                <img class="rounded-xl bg-neutral-50 lg:rounded-3xl" src="{{ Storage::url($data['profile_image']) }}"
                     alt="">
             </div>
             <figcaption class="text-base lg:col-start-1 lg:row-start-3">
