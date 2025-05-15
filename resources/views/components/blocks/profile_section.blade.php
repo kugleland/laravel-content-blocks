@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-end-1 w-16 lg:row-span-4 lg:w-80">
-                <img class="rounded-xl bg-neutral-100 lg:rounded-3xl pt-6 px-6 shadow-inner"
+                <img class="rounded-xl bg-white lg:rounded-3xl shadow-inner border border-neutral-200"
                     src="{{ Storage::url($data['profile_image']) }}" alt="">
             </div>
             <figcaption class="space-y-1 lg:col-start-1 lg:row-start-3">
